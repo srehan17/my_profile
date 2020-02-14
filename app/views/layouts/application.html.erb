@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyProfile</title>
+    <title>My Profile</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="navbar-item logo">Sarah Rehan
+        </div>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" datatarget="navbar-menu-burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navbar-menu-burger">
+        <div class="navbar-end">
+          <div class="navbar-item nav-link"><%= link_to "About" %></div>
+          <div class="navbar-item nav-link"><%= link_to "Work" %></div>
+          <div class="navbar-item nav-link"><%= link_to "Contact" %></div>
+        </div>
+      </div>
+      <div class="introduction">
+        <p>Hi, I am Sarah Rehan - An enterprising Web Developer</p>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

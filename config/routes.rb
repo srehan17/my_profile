@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
   get 'welcome/index'
 
   root 'welcome#index'

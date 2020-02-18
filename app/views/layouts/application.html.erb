@@ -4,6 +4,7 @@
     <title>My Profile</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -20,16 +21,15 @@
       </div>
       <div class="navbar-menu" id="navbar-menu-burger">
         <div class="navbar-end">
-          <div class="navbar-item nav-link"><%= link_to "About" %></div>
-          <div class="navbar-item nav-link"><%= link_to "Work" %></div>
-          <div class="navbar-item nav-link"><%= link_to "Contact" %></div>
+          <div class="navbar-item nav-link"><%= link_to "Home", root_path, class:"button" %></div>
+          <div class="navbar-item nav-link"><%= link_to "About", static_pages_about_path, class:"button" %></div>
+          <div class="navbar-item nav-link"><%= link_to "Contact", static_pages_contact_path, class:"button" %></div>
         </div>
       </div>
-      <div class="introduction">
-        <p>Hi, I am Sarah Rehan - An enterprising Web Developer</p>
+      <div id="page-title">
+        <%= yield :page_title %>
       </div>
     </nav>
-
     <div class="container">
       <%= yield %>
     </div>

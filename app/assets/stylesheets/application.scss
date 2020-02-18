@@ -10,11 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ // *= require_tree .
+ // *= require_self
  */
 
-@import "bulma";
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "bulma";
 
 body {
   margin: 0;
@@ -42,13 +45,7 @@ body {
   }
 }
 .navbar-item.nav-link {
-  background-color: gray;
-  height: 30px;
-  margin: 7px;
   font-weight: bold;
-  &:hover {
-    background-color: purple;
-  }
   a {
     color: orange;
   }
@@ -61,7 +58,7 @@ nav.navbar {
   background-color: orange;
 }
 
-.introduction {
+#page-title {
   position: absolute;
   top: 230px;
   width: 100%;
@@ -70,4 +67,19 @@ nav.navbar {
   vertical-align: middle;
   font-weight: 600;
   font-size: 1.8em;
+}
+
+#navbar-menu-burger {
+text-align: right;}
+
+.img-circle {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+}
+
+.label {
+  margin-top: 11px;
+  font-size: 1.2em;
+  color: orange;
 }
